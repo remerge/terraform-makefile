@@ -9,7 +9,7 @@ For a new project that does not use the Makefile framework yet, setup
 repository as a Makefile module:
 
 ```bash
-make mkf-add MODULE=remerge/terraform-makefile
+make add MODULE=remerge/terraform-makefile
 ```
 
 Afterwards make targets can be included in the parent project:
@@ -37,6 +37,8 @@ include mkf/terraform/terraform.mk
 | lint      | common/test.mk     | run code format check, code analysis, security scans, etc                                                           |
 | test      | common/test.mk     | run unit and integration tests                                                                                      |
 | build     | common/build.mk    | run all build steps and create artifact(s)                                                                          |
+| add       | common/mkf.mk      | add makefile framework module                                                                                       |
+| update    | common/mkf.mk      | update all makefile framework modules                                                                               |
 | clean     | prepare.mk         | remove Terraform modules and initialized backend configuration                                                      |
 | install   | prepare.mk         | install Terraform providers and modules                                                                             |
 | update    | prepare.mk         | update Terraform providers and modules                                                                              |
