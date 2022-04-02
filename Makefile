@@ -9,3 +9,6 @@ include $(MKF_COMMON)/common.mk
 
 MKF_TERRAFORM = .
 include $(MKF_TERRAFORM)/terraform.mk
+
+all: ## alias for `make generate format lint test build`
+all: generate format lint test build
