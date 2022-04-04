@@ -1,0 +1,65 @@
+---
+repos:
+  # generate
+  - repo: local
+    hooks:
+      - id: readme
+        name: readme
+        entry: make README.md
+        language: system
+        always_run: true
+        pass_filenames: false
+
+  # format
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "v2.6.2"
+    hooks:
+      - id: prettier
+        additional_dependencies:
+          - "prettier@2.6.1"
+          - "prettier-plugin-sh@0.9.0"
+
+  - repo: local
+    hooks:
+      - id: terraform-format
+        name: terraform-format
+        entry: terraform fmt -diff .
+        language: system
+        always_run: true
+        pass_filenames: false
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v4.1.0"
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+
+  # lint
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: "v0.31.1"
+    hooks:
+      - id: markdownlint
+
+  - repo: https://github.com/adrienverge/yamllint
+    rev: "v1.26.3"
+    hooks:
+      - id: yamllint
+
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: "v0.8.0.4"
+    hooks:
+      - id: shellcheck
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v4.1.0"
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: destroyed-symlinks
+      - id: forbid-new-submodules
+      - id: no-commit-to-branch
