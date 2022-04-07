@@ -27,5 +27,5 @@ test:: tf-test
 
 .PHONY: tf-build
 tf-build: ## build Terraform plan for the current configuration
-	terraform plan -compact-warnings -out=terraform.plan
+	terraform plan
 build:: tf-build

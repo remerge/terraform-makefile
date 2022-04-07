@@ -29,7 +29,7 @@ repos:
         pass_filenames: false
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v4.1.0"
+    rev: "v4.2.0"
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -52,7 +52,7 @@ repos:
       - id: shellcheck
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v4.1.0"
+    rev: "v4.2.0"
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -62,4 +62,3 @@ repos:
       - id: check-symlinks
       - id: destroyed-symlinks
       - id: forbid-new-submodules
-      - id: no-commit-to-branch
