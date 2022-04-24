@@ -1,9 +1,3 @@
-MKF_PREFIX ?= mkf
-MKF_TERRAFORM ?= $(MKF_PREFIX)/terraform
-
-TERRAFORM = $(call need-command,terraform)
-TF_FILES = $(wildcard **/*.tf)
-
 .PHONY: tf-clean
 tf-clean: ## remove Terraform providers and modules
 	rm -rf .terraform
